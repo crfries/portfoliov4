@@ -1,6 +1,6 @@
 <template>
   <div class="flex items-center justify-center w-full h-screen bg-blue">
-    <div class="container w-[50%] font-main">
+    <div class="w-[50%] font-main">
       <h4 class="text-[1.5rem] text-lightgray">Hi, My name is</h4>
       <h3 class="text-white text-[4rem]">Corey Fries</h3>
       <h3 class="text-white text-[4rem]">I build things for the Web.</h3>
