@@ -12,6 +12,9 @@
         "
         @submit.prevent="sendEmail"
       >
+        <h3 class="text-2xl font-secondary text-center text-lightgray">
+          Feel free to send me a message with any questions
+        </h3>
         <label class="font-secondary text-2xl text-lightgray mb-2">Name</label>
         <input
           type="text"
