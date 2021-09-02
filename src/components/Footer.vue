@@ -51,8 +51,17 @@
       </ul>
     </div>
     <div class="w-[50%] h-20 bg-lightgray">
-      <div class="h-full">
-        <Icon icon="akar-icons:html-fill" />
+      <div class="h-full flex flex-row justify-between place-items-center">
+        <Icon icon="akar-icons:html-fill" class="tech" />
+        <Icon icon="akar-icons:css-fill" class="tech" />
+        <Icon icon="akar-icons:javascript-fill" class="tech" />
+        <Icon icon="akar-icons:vue-fill" class="tech" />
+        <Icon icon="akar-icons:react-fill" class="tech" />
+        <Icon icon="akar-icons:php-fill" class="tech" />
+        <Icon icon="cib:laravel" class="tech" />
+        <Icon icon="cib:mysql" class="tech" />
+        <Icon icon="simple-icons:microsoftsqlserver" class="tech" />
+        <Icon icon="whh:nosql" class="tech" />
       </div>
     </div>
   </footer>
@@ -92,6 +101,16 @@ export default {
       color: #275dadff;
       transform: scale(1.3);
     }
+  }
+}
+
+.tech {
+  height: 20px;
+  width: 20px;
+  transition: all 0.3s ease;
+  margin: 0 25px;
+  &:hover {
+    color: #275dadff;
   }
 }
 </style>

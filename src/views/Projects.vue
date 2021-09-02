@@ -55,7 +55,7 @@ export default {
         {
           title: "Zippertubing Co.",
           description:
-            "I am currently a Web Developer for the company. I am largely responsible for the migration of the current website over to Vue. Currently it is built with Laravel using PHP and jQuery. I am also responsible for the frontend in the current version. Using VueEx to manage state across the platform and TailwindCss. Version control is handled through GitHub for all version branching.",
+            "I am currently a Web Developer for the company. I am largely responsible for the migration of the current website over to Vue. Currently it is built with Laravel using PHP and jQuery. I am also responsible for the frontend in the current version. Using VueEx to manage state across the platform and TailwindCss. Version control is handled through GitHub for all version branching. Repository is private, sorry.",
           image: "Zippertubing",
           link: "https://www.zippertubing.com",
           github: "sorry",
