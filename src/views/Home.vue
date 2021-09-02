@@ -30,6 +30,7 @@
             text-white
             items-center
             justify-center
+            fancy-6
           "
         >
           Let's Talk
@@ -38,3 +39,16 @@
     </div>
   </div>
 </template>
+
+<style lang="scss" scoped>
+.fancy-6 {
+  background: linear-gradient(45deg, #fff 50%, transparent 0) right / 250% 100%
+      no-repeat,
+    linear-gradient(45deg, transparent 50%, #fff 0) left / 250% 100% no-repeat;
+  transition: 0.5s;
+}
+.fancy-6:hover {
+  background-position: center;
+  color: #275dadff;
+}
+</style>

@@ -3,7 +3,7 @@
     <div v-for="(project, idx) in projects" v-bind:key="idx">
       <div class="w-[75vw] h-[30vh] m-5 border border-gray-400 flex flex-row">
         <div class="w-[100%] h-[100%] bg-cover" :class="`${project.image}`">
-          <div class="w-full h-full bg-[rgba(0,0,0,.6)]">
+          <div class="w-full h-full fancy-6">
             <h4 class="font-secondary text-4xl p-5 text-lightgray float-right">
               {{ project.title }} :
             </h4>
@@ -22,18 +22,21 @@
           <div class="flex flex-row">
             <h5 class="font-secondary font-bold">Links:</h5>
             <a :href="`${project.link}`" target="_blank" rel="no-referrer">
-              <font-awesome-icon
-                icon="window-maximize"
-                size="lg"
-                class="ml-5"
-              ></font-awesome-icon>
+              <Icon
+                icon="fa-brands:chrome"
+                class="h-[30px] w-[30px] mx-3 hvr-pulse-grow"
+              />
             </a>
-            <a :href="`${project.github}`" target="_blank" rel="no-referrer">
-              <font-awesome-icon
-                :icon="['fab', 'github-square']"
-                size="lg"
-                class="ml-5"
-              ></font-awesome-icon>
+            <a
+              :href="`${project.github}`"
+              target="_blank"
+              rel="no-referrer"
+              v-if="project.image != 'Zippertubing'"
+            >
+              <Icon
+                icon="fa-brands:github"
+                class="h-[30px] w-[30px] hvr-pulse-grow"
+              />
             </a>
           </div>
         </div>
@@ -43,6 +46,8 @@
 </template>
 
 <script>
+import { Icon } from "@iconify/vue2";
+
 export default {
   data() {
     return {
@@ -51,9 +56,9 @@ export default {
           title: "Zippertubing Co.",
           description:
             "I am currently a Web Developer for the company. I am largely responsible for the migration of the current website over to Vue. Currently it is built with Laravel using PHP and jQuery. I am also responsible for the frontend in the current version. Using VueEx to manage state across the platform and TailwindCss. Version control is handled through GitHub for all version branching.",
-          image: "Mazeraa",
+          image: "Zippertubing",
           link: "https://www.zippertubing.com",
-          github: "/",
+          github: "sorry",
           tech: "HTML | CSS | Vue | PHP | VueEx | MSql",
         },
         {
@@ -104,6 +109,9 @@ export default {
       ],
     };
   },
+  components: {
+    Icon,
+  },
 };
 </script>
 
@@ -122,5 +130,22 @@ export default {
 }
 .PhoenixAgency {
   background-image: url("../assets/phoenixagency.jpg");
+}
+.Zippertubing {
+  background-image: url("../assets/Zippertubing.jpg");
+}
+
+.fancy-6 {
+  background: linear-gradient(45deg, transparent, transparent 0) right / 250%
+      100% no-repeat,
+    linear-gradient(45deg, rgba(0, 0, 0, 0.5), transparent) left / 250% 100%
+      no-repeat;
+  transition: 0.5s;
+}
+.fancy-6:hover {
+  h4 {
+    color: #275dadff;
+  }
+  background-position: center;
 }
 </style>
