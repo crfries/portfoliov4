@@ -1,10 +1,10 @@
 <template>
   <div class="flex items-center justify-center w-full h-screen bg-blue">
     <div class="w-[50%] font-main">
-      <h4 class="text-[1.5rem] text-lightgray">Hi, My name is</h4>
-      <h3 class="text-white text-[4rem]">Corey Fries</h3>
-      <h3 class="text-white text-[4rem]">I build things for the Web.</h3>
-      <h5 class="text-lightgray text-[1.5rem] font-secondary">
+      <h3 class="title-h3">Hi, My name is</h3>
+      <h4 class="title-h4">Corey Fries</h4>
+      <h4 class="title-h4">I build things for the Web.</h4>
+      <h5 class="title-h5">
         I am a Phoenix-based software engineer who specializes in designing and
         building exceptional digital experiences. I am currently a full stack
         developer for
@@ -18,29 +18,30 @@
         >
         .
       </h5>
-      <router-link to="/contact" class="text-xl text-lightgray">
-        <button
-          class="
-            border-2
-            w-[fit-content]
-            h-12
-            mt-5
-            px-10
-            flex
-            text-white
-            items-center
-            justify-center
-            fancy-6
-          "
-        >
-          Let's Talk
-        </button>
+      <router-link to="/contact" class="home-button-link">
+        <button class="home-button fancy-6">Let's Talk</button>
       </router-link>
     </div>
   </div>
 </template>
 
 <style lang="scss" scoped>
+.home-button {
+  @apply border-2 w-[fit-content] h-12 mt-5 px-10 flex text-white items-center justify-center;
+}
+.home-button-link {
+  @apply text-xl text-lightgray;
+}
+.title-h3 {
+  @apply text-[1.5rem] text-lightgray;
+}
+.title-h4 {
+  @apply text-white text-[4rem];
+}
+.title-h5 {
+  @apply text-lightgray text-[1.5rem] font-secondary;
+}
+
 .fancy-6 {
   background: linear-gradient(45deg, #fff 50%, transparent 0) right / 250% 100%
       no-repeat,
