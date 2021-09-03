@@ -1,6 +1,6 @@
 <template>
-  <div class="flex items-center justify-center w-full h-screen bg-blue">
-    <div class="w-[50%] font-main">
+  <div class="main-container">
+    <div class="home-container">
       <h3 class="title-h3">Hi, My name is</h3>
       <h4 class="title-h4">Corey Fries</h4>
       <h4 class="title-h4">I build things for the Web.</h4>
@@ -31,6 +31,12 @@
 }
 .home-button-link {
   @apply text-xl text-lightgray;
+}
+.home-container {
+  @apply w-[50%] font-main;
+}
+.main-container {
+  @apply flex items-center justify-center w-full h-screen bg-blue;
 }
 .title-h3 {
   @apply text-[1.5rem] text-lightgray;

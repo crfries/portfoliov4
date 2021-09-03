@@ -1,30 +1,28 @@
 <template>
-  <div class="w-full h-full bg-blue grid place-content-center pt-10">
+  <div class="projects-container">
     <div v-for="(project, idx) in projects" v-bind:key="idx">
-      <div class="w-[75vw] h-[30vh] m-5 border border-gray-400 flex flex-row">
-        <div class="w-[100%] h-[100%] bg-cover" :class="`${project.image}`">
-          <div class="w-full h-full fancy-6">
-            <h4 class="font-secondary text-4xl p-5 text-lightgray float-right">
-              {{ project.title }} :
-            </h4>
+      <div class="project-container">
+        <div class="project-image-container" :class="`${project.image}`">
+          <div class="project-text-container fancy-6">
+            <h4 class="project-text">{{ project.title }} :</h4>
           </div>
         </div>
-        <div class="w-[100%] h-[100%] bg-lightgray flex flex-col px-10 pt-5">
+        <div class="project-desc-container">
           <div class="mb-2">
             <p>{{ project.description }}</p>
           </div>
           <hr class="border-gray-400" />
-          <div class="mt-2 mb-1 flex flex-row">
-            <h5 class="font-secondary font-bold">Stack:</h5>
+          <div class="project-tech-container">
+            <h5 class="prject-tech">Stack:</h5>
             <p class="ml-5">{{ project.tech }}</p>
           </div>
           <hr class="mb-3 border-gray-400" />
           <div class="flex flex-row">
-            <h5 class="font-secondary font-bold">Links:</h5>
+            <h5 class="project-link">Links:</h5>
             <a :href="`${project.link}`" target="_blank" rel="no-referrer">
               <Icon
                 icon="fa-brands:chrome"
-                class="h-[30px] w-[30px] mx-3 hvr-pulse-grow"
+                class="project-icon hvr-pulse-grow"
               />
             </a>
             <a
@@ -35,7 +33,7 @@
             >
               <Icon
                 icon="fa-brands:github"
-                class="h-[30px] w-[30px] hvr-pulse-grow"
+                class="project-icon hvr-pulse-grow"
               />
             </a>
           </div>
@@ -116,6 +114,36 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+.project-container {
+  @apply w-[75vw] h-[30vh] m-5 border border-gray-400 flex flex-row;
+}
+.projects-container {
+  @apply w-full h-full bg-blue grid place-content-center pt-10;
+}
+.project-desc-container {
+  @apply w-[100%] h-[100%] bg-lightgray flex flex-col px-10 pt-5;
+}
+.project-icon {
+  @apply h-[30px] w-[30px] mx-3;
+}
+.project-image-container {
+  @apply w-[100%] h-[100%] bg-cover;
+}
+.project-link {
+  @apply font-secondary font-bold;
+}
+.project-tech {
+  @apply font-secondary font-bold;
+}
+.project-tech-container {
+  @apply mt-2 mb-1 flex flex-row;
+}
+.project-text {
+  @apply font-secondary text-4xl p-5 text-lightgray float-right;
+}
+.project-text-container {
+  @apply w-full h-full;
+}
 .Mazeraa {
   background-image: url("../assets/Mazeraa.jpg");
 }

@@ -1,57 +1,28 @@
 <template>
-  <footer class="w-full h-full flex flex-row bottom-0">
-    <div class="w-[50%] h-20 bg-lightgray">
-      <ul class="h-full flex flew-row justify-evenly font-secondary uppercase">
+  <footer class="footer-container">
+    <div class="links-container">
+      <ul class="links-list">
         <a
           href="https://github.com/crfries"
-          class="
-            w-[100%]
-            h-[100%]
-            self-center
-            grid
-            place-content-center
-            footer-icon
-            fancy-6
-          "
+          class="footer-icon fancy-6"
           target="_blank"
         >
           <Icon icon="fa-brands:github-alt" class="icon" />
         </a>
         <a
           href="https://www.linkedin.com/in/corey-fries-32755720a/"
-          class="
-            w-[100%]
-            h-[100%]
-            self-center
-            text-center
-            grid
-            place-content-center
-            footer-icon
-            fancy-6
-          "
+          class="footer-icon fancy-6"
           target="_blank"
         >
           <Icon icon="fa-brands:linkedin" class="icon" />
         </a>
-        <a
-          href="mailto:coreyrfries@gmail.com"
-          class="
-            w-[100%]
-            h-[100%]
-            self-center
-            text-center
-            grid
-            place-content-center
-            footer-icon
-            fancy-6
-          "
-        >
+        <a href="mailto:coreyrfries@gmail.com" class="footer-icon fancy-6">
           <Icon icon="entypo:email" class="icon" />
         </a>
       </ul>
     </div>
-    <div class="w-[50%] h-20 bg-lightgray">
-      <div class="h-full flex flex-row justify-between place-items-center">
+    <div class="tech-container">
+      <div class="tech-secondary-container">
         <Icon icon="akar-icons:html-fill" class="tech" />
         <Icon icon="akar-icons:css-fill" class="tech" />
         <Icon icon="akar-icons:javascript-fill" class="tech" />
@@ -76,6 +47,24 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+//*Tailwind CSS classes
+.footer-container {
+  @apply w-full h-full flex flex-row bottom-0;
+}
+.links-container {
+  @apply w-[50%] h-20 bg-lightgray;
+}
+.links-list {
+  @apply h-full flex flex-row justify-evenly font-secondary uppercase;
+}
+.tech-container {
+  @apply w-[50%] h-20 bg-lightgray;
+}
+.tech-secondary-container {
+  @apply h-full flex flex-row justify-between place-items-center;
+}
+
+// !Custom CSS classes
 .fancy-6 {
   background: linear-gradient(45deg, #fff 50%, transparent 0) right / 250% 100%
       no-repeat,
@@ -86,6 +75,8 @@ export default {
   transition: 0.5s;
 }
 .footer-icon {
+  @apply w-[100%] h-[100%] self-center grid place-content-center;
+
   transition: all 0.3s ease;
 
   .icon {

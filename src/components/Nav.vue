@@ -1,36 +1,15 @@
 <template>
-  <nav class="w-full h-auto font-main z-10 sticky top-0">
-    <div class="w-[50%] h-[100px] bg-lightgray float-left">
+  <nav class="nav-container">
+    <div class="logo">
       <a href="/">
-        <div class="w-[150px] h-full text-center">
-          <h1
-            class="
-              text-5xl text-blue
-              thick-3
-              h-full
-              w-full
-              grid
-              place-content-center
-            "
-          >
-            CF
-          </h1>
+        <div class="logo-container">
+          <h1 class="logo-text thick-3">CF</h1>
         </div>
       </a>
     </div>
-    <div
-      class="
-        w-[50%]
-        h-[100px]
-        float-right
-        bg-lightgray
-        flex
-        items-center
-        justify-center
-      "
-    >
+    <div class="link-container">
       <div class="w-full">
-        <ul class="flex w-full text-xl text-blue justify-evenly">
+        <ul class="link-list">
           <router-link to="/projects">
             <li class="sliding-8">
               <span>01 | Projects</span>
@@ -51,11 +30,30 @@
 </template>
 
 <style lang="scss" scoped>
+.link-container {
+  @apply w-[50%] h-[100px] float-right bg-lightgray flex items-center justify-center;
+}
+.link-list {
+  @apply flex w-full text-xl text-blue justify-evenly;
+}
+.logo {
+  @apply w-[50%] h-[100px] bg-lightgray float-left;
+}
+.logo-container {
+  @apply w-[150px] h-full text-center;
+}
+.logo-text {
+  @apply text-5xl text-blue h-full w-full grid place-content-center;
+}
+.nav-container {
+  @apply h-full flex flex-row justify-between place-items-center;
+}
+
 .sliding-8 {
-  width: 150px;
+  width: 130px;
   height: 60px;
   text-shadow: -11ch 0 #fff;
-  text-indent: var(--t, 0);
+  text-indent: var(--t, -1rem);
   background: linear-gradient(#275dadff 0 0) left/var(--d, 0) 100% no-repeat;
   transition: 0.5s linear;
 }
