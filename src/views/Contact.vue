@@ -10,8 +10,8 @@
         <label class="label">Email</label>
         <input type="email" name="user_email" class="input" required />
         <label class="label">Message</label>
-        <textarea name="message" rows="5" class="" required></textarea>
-        <button type="submit" value="Send" class="button fancy-6">
+        <textarea name="message" rows="5" class="input" required></textarea>
+        <button type="submit" value="Send" class="submit-button fancy-6">
           Send Message
         </button>
       </form>
@@ -46,7 +46,7 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.button {
+.submit-button {
   @apply font-secondary text-xl text-white mt-5 py-2 w-[50%] self-center border-2;
 }
 .header {
