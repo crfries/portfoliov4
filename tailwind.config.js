@@ -1,5 +1,3 @@
-const Mazeraa = './src/assets/Mazeraa.jpg'
-
 module.exports = {
   purge: [ './index.html', './src/**/*.{vue,js,ts,jsx,tsx}' ],
   darkMode: false, // or 'media' or 'class'
