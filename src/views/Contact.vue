@@ -1,55 +1,19 @@
 <template>
-  <div class="flex w-full h-full bg-blue contact-container">
-    <div class="flex w-full h-screen">
-      <form
-        class="
-          contact-form
-          flex flex-col
-          m-auto
-          w-[25%]
-          h-[100%]
-          justify-center
-        "
-        @submit.prevent="sendEmail"
-      >
-        <h3 class="text-2xl font-secondary text-center text-lightgray">
+  <div class="contact-container">
+    <div class="secondary-contact-container">
+      <form class="contact-form" @submit.prevent="sendEmail">
+        <h3 class="header">
           Feel free to send me a message with any questions
         </h3>
-        <label class="font-secondary text-2xl text-lightgray mb-2">Name</label>
-        <input
-          type="text"
-          name="user_name"
-          class="p-3 font-secondary text-xl"
-          required
-        />
-        <label class="font-secondary text-2xl text-lightgray mb-2">Email</label>
-        <input
-          type="email"
-          name="user_email"
-          class="p-3 font-secondary text-xl"
-          required
-        />
-        <label class="font-secondary text-2xl text-lightgray mb-2"
-          >Message</label
-        >
-        <textarea
-          name="message"
-          rows="5"
-          class="font-secondary text-xl p-3"
-          required
-        ></textarea>
-        <input
-          type="submit"
-          value="Send"
-          class="
-            font-secondary
-            text-2xl text-blue
-            bg-white
-            mt-5
-            w-[50%]
-            self-center
-          "
-        />
+        <label class="label">Name</label>
+        <input type="text" name="user_name" class="input" required />
+        <label class="label">Email</label>
+        <input type="email" name="user_email" class="input" required />
+        <label class="label">Message</label>
+        <textarea name="message" rows="5" class="" required></textarea>
+        <button type="submit" value="Send" class="button fancy-6">
+          Send Message
+        </button>
       </form>
     </div>
   </div>
@@ -82,12 +46,43 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+.button {
+  @apply font-secondary text-xl text-white mt-5 py-2 w-[50%] self-center border-2;
+}
+.header {
+  @apply text-2xl font-secondary text-center text-lightgray;
+}
+.input {
+  @apply font-secondary text-xl p-3;
+}
+.label {
+  @apply font-secondary text-2xl text-lightgray mb-2;
+}
+.contact-form {
+  @apply flex flex-col m-auto w-[25%] h-[100%] justify-center;
+}
+.secondary-contact-container {
+  @apply flex w-[100%] h-screen bg-blue;
+}
 .contact-container {
+  @apply flex w-full h-full bg-blue;
+
   input,
   textarea {
     &:focus {
       outline: none;
     }
   }
+}
+
+.fancy-6 {
+  background: linear-gradient(45deg, #fff 50%, transparent 0) right / 250% 100%
+      no-repeat,
+    linear-gradient(45deg, transparent 50%, #fff 0) left / 250% 100% no-repeat;
+  transition: 0.5s;
+}
+.fancy-6:hover {
+  background-position: center;
+  color: #275dadff;
 }
 </style>

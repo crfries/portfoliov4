@@ -111,6 +111,7 @@ export default {
   margin: 0 25px;
   &:hover {
     color: #275dadff;
+    transform: scale(2);
   }
 }
 </style>
