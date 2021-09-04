@@ -36,7 +36,7 @@
   @apply w-[50%] font-main;
 }
 .main-container {
-  @apply flex items-center justify-center w-full h-screen bg-blue;
+  @apply flex items-center justify-center w-full h-screen bg-blue relative;
 }
 .title-h3 {
   @apply text-[1.5rem] text-lightgray;

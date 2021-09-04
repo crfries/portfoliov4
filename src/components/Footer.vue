@@ -16,9 +16,9 @@
         >
           <Icon icon="fa-brands:linkedin" class="icon" />
         </a>
-        <a href="mailto:coreyrfries@gmail.com" class="footer-icon fancy-6">
+        <router-link to="/contact" class="footer-icon fancy-6">
           <Icon icon="entypo:email" class="icon" />
-        </a>
+        </router-link>
       </ul>
     </div>
     <div class="tech-container">
@@ -47,7 +47,7 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-//*Tailwind CSS classes
+// *Tailwind CSS classes
 .footer-container {
   @apply w-full h-full flex flex-row bottom-0;
 }

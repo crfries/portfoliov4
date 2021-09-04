@@ -32,21 +32,39 @@
 <style lang="scss" scoped>
 .link-container {
   @apply w-[50%] h-[100px] float-right bg-lightgray flex items-center justify-center;
+  @media screen and (max-width: 768px) {
+    @apply w-full;
+  }
 }
 .link-list {
   @apply flex w-full text-xl text-blue justify-evenly;
+  @media screen and (max-width: 768px) {
+    @apply text-lg;
+  }
 }
 .logo {
   @apply w-[50%] h-[100px] bg-lightgray float-left;
+  @media screen and (max-width: 768px) {
+    @apply w-full h-auto pt-3;
+  }
 }
 .logo-container {
   @apply w-[150px] h-full text-center;
+  @media screen and (max-width: 768px) {
+    @apply w-full;
+  }
 }
 .logo-text {
   @apply text-5xl text-blue h-full w-full grid place-content-center;
+
+  @media screen and (max-width: 768px) {
+  }
 }
 .nav-container {
   @apply h-full flex flex-row justify-between place-items-center;
+  @media screen and (max-width: 768px) {
+    @apply flex-col;
+  }
 }
 
 .sliding-8 {
