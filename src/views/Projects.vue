@@ -1,8 +1,12 @@
 <template>
   <div class="projects-container">
-    <div v-for="(project, idx) in projects" v-bind:key="idx">
+    <div
+      v-for="(project, idx) in projects"
+      :key="idx"
+      class="project-outer-container"
+    >
       <div class="project-container">
-        <div class="project-image-container" :class="`${project.image}`">
+        <div class="project-image-container" :class="project.image">
           <div class="project-text-container fancy-6">
             <h4 class="project-text">{{ project.title }} :</h4>
           </div>
@@ -19,14 +23,14 @@
           <hr class="mb-3 border-gray-400" />
           <div class="flex flex-row">
             <h5 class="project-link">Links:</h5>
-            <a :href="`${project.link}`" target="_blank" rel="no-referrer">
+            <a :href="project.link" target="_blank" rel="no-referrer">
               <Icon
                 icon="fa-brands:chrome"
                 class="project-icon hvr-pulse-grow"
               />
             </a>
             <a
-              :href="`${project.github}`"
+              :href="project.github"
               target="_blank"
               rel="no-referrer"
               v-if="project.image != 'Zippertubing'"
@@ -57,7 +61,7 @@ export default {
           image: "Zippertubing",
           link: "https://www.zippertubing.com",
           github: "sorry",
-          tech: "HTML | CSS | Vue | PHP | VueEx | MSql",
+          tech: "HTML | CSS | Laravel | Vue | PHP | VueEx | MSql",
         },
         {
           title: "Mazeraa",
@@ -110,27 +114,40 @@ export default {
   components: {
     Icon,
   },
+  
 };
 </script>
 
 <style lang="scss" scoped>
 .project-container {
   @apply w-[75vw] h-[30vh] m-5 border border-gray-400 flex flex-row;
+  @media screen and (max-width: 1550px) {
+    @apply h-[100%];
+  }
+  @media screen and (max-width: 1300px) {
+    @apply flex-col h-[500px];
+  }
+  @media screen and (max-width: 678px) {
+    @apply h-[auto] w-full m-0 p-0 my-5;
+  }
 }
 .projects-container {
-  @apply w-full h-full bg-blue grid place-content-center pt-10;
+  @apply w-full h-full bg-blue grid place-content-center;
 }
 .project-desc-container {
-  @apply w-[100%] h-[100%] bg-lightgray flex flex-col px-10 pt-5;
+  @apply w-[100%] h-[100%] bg-lightgray flex flex-col px-10 py-5  hover:bg-white;
 }
 .project-icon {
   @apply h-[30px] w-[30px] mx-3;
 }
 .project-image-container {
-  @apply w-[100%] h-[100%] bg-cover;
+  @apply w-[100%] h-[100%] bg-cover bg-center;
+  @media screen and (max-width: 1300px) {
+    @apply h-[500px] w-[100%] bg-cover bg-center;
+  }
 }
 .project-link {
-  @apply font-secondary font-bold;
+  @apply font-secondary font-bold pb-5;
 }
 .project-tech {
   @apply font-secondary font-bold;

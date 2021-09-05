@@ -10,18 +10,18 @@
     <div class="link-container">
       <div class="w-full">
         <ul class="link-list">
-          <router-link to="/projects">
-            <li class="sliding-8">
+          <router-link to="/projects" class="link">
+            <li class="link-style sliding-8">
               <span>01 | Projects</span>
             </li>
           </router-link>
-          <router-link to="/contact">
+          <router-link to="/contact" class="link">
             <li class="sliding-8">
               <span>02 | Contact</span>
             </li>
           </router-link>
-          <a href="/">
-            <li class="sliding-8">03 |<span>Resume</span></li>
+          <a href="/" class="link">
+            <li class="sliding-8">03 | <span>Resume</span></li>
           </a>
         </ul>
       </div>
@@ -29,17 +29,56 @@
   </nav>
 </template>
 
+<script>
+export default {
+  data() {
+    return {
+      windowWidth: window.innerWidth,
+    };
+  },
+
+  mounted() {
+    this.$nextTick(() => {
+      window.addEventListener("resize", this.onResize);
+    });
+  },
+
+  beforeDestroy() {
+    window.removeEventListener("resize", this.onResize);
+  },
+
+  methods: {
+    onResize() {
+      this.windowWidth = window.innerWidth;
+      if (this.windowWidth < 768) {
+        document.querySelectorAll("link-style").classList.remove("sliding-8");
+      }
+    },
+  },
+};
+</script>
+
+
 <style lang="scss" scoped>
+.link {
+  @apply grid place-content-center text-center;
+}
 .link-container {
   @apply w-[50%] h-[100px] float-right bg-lightgray flex items-center justify-center;
   @media screen and (max-width: 768px) {
-    @apply w-full;
+    @apply w-full float-none;
+  }
+  @media screen and (max-width: 400px) {
+    @apply h-auto;
   }
 }
 .link-list {
   @apply flex w-full text-xl text-blue justify-evenly;
   @media screen and (max-width: 768px) {
     @apply text-lg;
+  }
+  @media screen and (max-width: 400px) {
+    @apply flex-col;
   }
 }
 .logo {

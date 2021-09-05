@@ -27,13 +27,16 @@
 
 <style lang="scss" scoped>
 .home-button {
-  @apply border-2 w-[fit-content] h-12 mt-5 px-10 flex text-white items-center justify-center;
+  @apply border-2 h-12 mt-5 px-10 flex text-white items-center justify-center;
 }
 .home-button-link {
   @apply text-xl text-lightgray;
 }
 .home-container {
   @apply w-[50%] font-main;
+  @media screen and (max-width: 768px) {
+    @apply w-[100%] px-4;
+  }
 }
 .main-container {
   @apply flex items-center justify-center w-full h-screen bg-blue relative;
@@ -43,6 +46,9 @@
 }
 .title-h4 {
   @apply text-white text-[4rem];
+  @media screen and (max-width: 768px) {
+    @apply text-5xl;
+  }
 }
 .title-h5 {
   @apply text-lightgray text-[1.5rem] font-secondary;
