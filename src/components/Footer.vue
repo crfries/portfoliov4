@@ -4,19 +4,25 @@
       <ul class="links-list">
         <a
           href="https://github.com/crfries"
-          class="footer-icon fancy-6"
+          class="footer-icon"
+          :class="{ 'fancy-6': !isMobile }"
           target="_blank"
         >
           <Icon icon="fa-brands:github-alt" class="icon" />
         </a>
         <a
           href="https://www.linkedin.com/in/corey-fries-32755720a/"
-          class="footer-icon fancy-6"
+          class="footer-icon"
+          :class="{ 'fancy-6': !isMobile }"
           target="_blank"
         >
           <Icon icon="fa-brands:linkedin" class="icon" />
         </a>
-        <router-link to="/contact" class="footer-icon fancy-6">
+        <router-link
+          to="/contact"
+          class="footer-icon"
+          :class="{ 'fancy-6': !isMobile }"
+        >
           <Icon icon="entypo:email" class="icon" />
         </router-link>
       </ul>
@@ -43,6 +49,23 @@ import { Icon } from "@iconify/vue2";
 export default {
   name: "Footer",
   components: { Icon },
+  data() {
+    return {
+      isMobile: null,
+    };
+  },
+  methods: {
+    checkMobile() {
+      if (window.innerWidth < 768) {
+        this.isMobile = true;
+      } else {
+        this.isMobile = false;
+      }
+    },
+  },
+  mounted() {
+    this.checkMobile();
+  },
 };
 </script>
 
@@ -50,18 +73,28 @@ export default {
 // *Tailwind CSS classes
 .footer-container {
   @apply w-full h-full flex flex-row bottom-0;
+
+  @media screen and (max-width: 768px) {
+    @apply flex-col-reverse;
+  }
 }
 .links-container {
   @apply w-[50%] h-20 bg-lightgray;
+  @media screen and (max-width: 768px) {
+    @apply w-full;
+  }
 }
 .links-list {
   @apply h-full flex flex-row justify-evenly font-secondary uppercase;
 }
 .tech-container {
   @apply w-[50%] h-20 bg-lightgray;
+  @media screen and (max-width: 768px) {
+    @apply w-full;
+  }
 }
 .tech-secondary-container {
-  @apply h-full flex flex-row justify-between place-items-center;
+  @apply h-full flex flex-row justify-around place-items-center;
 }
 
 // !Custom CSS classes
@@ -81,10 +114,7 @@ export default {
 
   .icon {
     transition: all 0.3s ease;
-
-    height: 35px;
-    width: 35px;
-    color: black;
+    @apply h-[35px] w-[35px] text-black;
   }
 
   &:hover {
@@ -96,13 +126,16 @@ export default {
 }
 
 .tech {
-  height: 20px;
-  width: 20px;
+  @apply h-[20px] w-[20px];
   transition: all 0.3s ease;
-  margin: 0 25px;
+
   &:hover {
     color: #275dadff;
     transform: scale(2);
+  }
+
+  @media screen and (max-width: 768px) {
+    margin: 0;
   }
 }
 </style>

@@ -3,7 +3,7 @@
     <div class="logo">
       <a href="/">
         <div class="logo-container">
-          <h1 class="logo-text thick-3">CF</h1>
+          <h1 class="logo-text" :class="{ 'thick-3': !isMobile }">CF</h1>
         </div>
       </a>
     </div>
@@ -11,17 +11,19 @@
       <div class="w-full">
         <ul class="link-list">
           <router-link to="/projects" class="link">
-            <li class="link-style sliding-8">
+            <li :class="{ 'sliding-8': !isMobile }">
               <span>01 | Projects</span>
             </li>
           </router-link>
           <router-link to="/contact" class="link">
-            <li class="sliding-8">
+            <li :class="{ 'sliding-8': !isMobile }">
               <span>02 | Contact</span>
             </li>
           </router-link>
           <a href="/" class="link">
-            <li class="sliding-8">03 | <span>Resume</span></li>
+            <li :class="{ 'sliding-8': !isMobile }">
+              03 | <span>Resume</span>
+            </li>
           </a>
         </ul>
       </div>
@@ -33,27 +35,20 @@
 export default {
   data() {
     return {
-      windowWidth: window.innerWidth,
+      isMobile: null,
     };
   },
-
-  mounted() {
-    this.$nextTick(() => {
-      window.addEventListener("resize", this.onResize);
-    });
-  },
-
-  beforeDestroy() {
-    window.removeEventListener("resize", this.onResize);
-  },
-
   methods: {
-    onResize() {
-      this.windowWidth = window.innerWidth;
-      if (this.windowWidth < 768) {
-        document.querySelectorAll("link-style").classList.remove("sliding-8");
+    checkMobile() {
+      if (window.innerWidth < 768) {
+        this.isMobile = true;
+      } else {
+        this.isMobile = false;
       }
     },
+  },
+  mounted() {
+    this.checkMobile();
   },
 };
 </script>

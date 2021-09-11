@@ -11,7 +11,12 @@
         <input type="email" name="user_email" class="input" required />
         <label class="label">Message</label>
         <textarea name="message" rows="5" class="input" required></textarea>
-        <button type="submit" value="Send" class="submit-button fancy-6">
+        <button
+          type="submit"
+          value="Send"
+          class="submit-button"
+          :class="{ 'fancy-6': !isMobile }"
+        >
           Send Message
         </button>
       </form>
@@ -23,7 +28,22 @@
 import emailjs from "emailjs-com";
 
 export default {
+  data() {
+    return {
+      isMobile: null,
+    };
+  },
+  mounted() {
+    this.checkMobile();
+  },
   methods: {
+    checkMobile() {
+      if (window.innerWidth < 768) {
+        this.isMobile = true;
+      } else {
+        this.isMobile = false;
+      }
+    },
     sendEmail: (e) => {
       emailjs
         .sendForm(
@@ -54,12 +74,22 @@ export default {
 }
 .input {
   @apply font-secondary text-xl p-3;
+
+  @media screen and (max-width: 1200px) {
+    @apply w-[100%];
+  }
 }
 .label {
   @apply font-secondary text-2xl text-lightgray mb-2;
 }
 .contact-form {
   @apply flex flex-col m-auto w-[25%] h-[100%] justify-center;
+  @media screen and (max-width: 1200px) {
+    @apply w-[50%];
+  }
+  @media screen and (max-width: 768px) {
+    @apply w-[80%];
+  }
 }
 .secondary-contact-container {
   @apply flex w-[100%] h-screen bg-blue;
