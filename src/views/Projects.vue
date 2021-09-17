@@ -55,15 +55,6 @@ export default {
     return {
       projects: [
         {
-          title: "Zippertubing Co.",
-          description:
-            "I am currently a Web Developer for the company. I am largely responsible for the migration of the current website over to Vue. Currently it is built with Laravel using PHP and jQuery. I am also responsible for the frontend in the current version. Using VueEx to manage state across the platform and TailwindCss. Version control is handled through GitHub for all version branching. Repository is private, sorry.",
-          image: "Zippertubing",
-          link: "https://www.zippertubing.com",
-          github: "sorry",
-          tech: "HTML | CSS | Laravel | Vue | PHP | VueEx | MSql",
-        },
-        {
           title: "Mazeraa",
           description:
             "Working with Authentication and Authorization (JWT). Implementing pagination system for products and reviews to reduce loading time. Integrated PayPal API for payment processing. Admin page to administed CRUD operations for products and customers. Creating API for server handled by Express. Global state management through Redux. Responsive first design and mobile formatting. ",
@@ -114,7 +105,6 @@ export default {
   components: {
     Icon,
   },
-  
 };
 </script>
 
