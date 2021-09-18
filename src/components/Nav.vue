@@ -20,7 +20,11 @@
               <span>02 | Contact</span>
             </li>
           </router-link>
-          <a href="/" class="link">
+          <a
+            href="https://drive.google.com/file/d/1WyM27t6Yq-CYIR-VQNPgeEqnu2h61_je/view?usp=sharing"
+            target="_blank"
+            class="link"
+          >
             <li :class="{ 'sliding-8': !isMobile }">
               03 | <span>Resume</span>
             </li>
@@ -36,6 +40,7 @@ export default {
   data() {
     return {
       isMobile: null,
+      Resume: "../assets/Resume.pdf",
     };
   },
   methods: {
@@ -45,6 +50,9 @@ export default {
       } else {
         this.isMobile = false;
       }
+    },
+    openWindow() {
+      window.open(this.Resume, "_blank");
     },
   },
   mounted() {
