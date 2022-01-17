@@ -21,7 +21,7 @@
             </li>
           </router-link>
           <a
-            href="https://drive.google.com/file/d/1WyM27t6Yq-CYIR-VQNPgeEqnu2h61_je/view?usp=sharing"
+            href="/"
             target="_blank"
             class="link"
           >
