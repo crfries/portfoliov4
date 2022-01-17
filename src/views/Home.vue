@@ -9,12 +9,12 @@
         building exceptional digital experiences. I am currently a full stack
         developer for
         <a
-          href="https://www.zippertubing.com"
+          href="https://www.redbull.com"
           target="_blank"
           rel="noopener noreferrer"
           class="font-bold"
         >
-          Zippertubing Company</a
+          Red Bull</a
         >
         .
       </h5>
